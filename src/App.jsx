@@ -1,11 +1,10 @@
+import Navbar from "./components/navbar"
 
 function App() {
-  
-
   return (
-    <>
-  <div className="bg-slate-700">dv</div>
-    </>
+    <div className="max-w-[370px] mx-auto">
+  <Navbar/>
+    </div>
   )
 }
 
