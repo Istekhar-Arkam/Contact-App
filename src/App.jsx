@@ -3,7 +3,7 @@ import SearchSpace from "./components/searchSpace";
 
 function App() {
   return (
-    <div className="max-w-[370px] mx-auto">
+    <div className="max-w-sm mx-auto">
       <Navbar />
       <SearchSpace />
     </div>
