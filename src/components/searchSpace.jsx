@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdAddCircle } from "react-icons/io";
-import {} from "firebase/firestore";
+import { collection } from "firebase/firestore";
+
 const SearchSpace = () => {
   const [contacts, setContacts] = useState([]);
 
-
-useEffect(()=>{
-const getContacts=async()=>{};
-try {
- const contactCollection=collection;  
-    
-
-} catch (error) {
-    
-}
-
-
-
-getContacts();
-},[]);
+  useEffect(() => {
+    const getContacts = async () => {
+      try {
+        const contactsRef = collection(db, "contacts");
+        const contactsSnapshot = await getDocs(contactsRef);
+        const contactList = contactsSnapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.doc.data(),
+          };
+        });
+        setContacts(contactList);
+      } catch (error) {
+        console.log(error);
+      }
+      y;
+    };
+    getContacts();
+  }, []);
 
   return (
     <div className="flex relative mx-3">
@@ -29,8 +34,14 @@ getContacts();
           type="text"
           className="bg-transparent border-2 border-white flex-grow rounded-md h-10 text-white text-xl font-semibold px-10 w-3/4"
         />
-        <IoMdAddCircle className="text-white text-4xl" />
+        <IoMdAddCircle className="text-white text-4xl cursor-pointer" />
       </div>
+      <div>{contacts.map((contact)=>(
+<div key={contact.id}>
+
+
+</div>
+      ))}</div>
     </div>
   );
 };
