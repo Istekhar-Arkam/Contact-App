@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdAddCircle } from "react-icons/io";
-import { collection } from "firebase/firestore";
+
+// import { collection } from "firebase/firestore";
 
 const SearchSpace = () => {
-  const [contacts, setContacts] = useState([]);
+  // const [contacts, setContacts] = useState([]);
 
-  useEffect(() => {
-    const getContacts = async () => {
-      try {
-        const contactsRef = collection(db, "contacts");
-        const contactsSnapshot = await getDocs(contactsRef);
-        const contactList = contactsSnapshot.docs.map((doc) => {
-          return {
-            id: doc.id,
-            ...doc.doc.data(),
-          };
-        });
-        setContacts(contactList);
-      } catch (error) {
-        console.log(error);
-      }
-      y;
-    };
-    getContacts();
-  }, []);
+  // useEffect(() => {
+  //   const getContacts = async () => {
+  //     try {
+  //       const contactsRef = collection(db, "contacts");
+  //       const contactsSnapshot = await getDocs(contactsRef);
+  //       const contactList = contactsSnapshot.docs.map((doc) => {
+  //         return {
+  //           id: doc.id,
+  //           ...doc.doc.data(),
+  //         };
+  //       });
+  //       setContacts(contactList);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //     y;
+  //   };
+  //   getContacts();
+  // }, []);
 
   return (
     <div className="flex relative mx-3">
@@ -36,12 +37,11 @@ const SearchSpace = () => {
         />
         <IoMdAddCircle className="text-white text-4xl cursor-pointer" />
       </div>
-      <div>{contacts.map((contact)=>(
-<div key={contact.id}>
-
-
-</div>
-      ))}</div>
+      {/* <div>
+        {contacts.map((contact) => (
+          <div key={contact.id}></div>
+        ))}
+      </div> */}
     </div>
   );
 };
