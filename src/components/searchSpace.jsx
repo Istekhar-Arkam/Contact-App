@@ -1,10 +1,19 @@
 // import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdAddCircle } from "react-icons/io";
+import Modal from "./modal";
 
 // import { collection } from "firebase/firestore";
 
 const SearchSpace = () => {
+  const [isOpen, setOpen] = useState(false);
+  const onOpen = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
   // const [contacts, setContacts] = useState([]);
 
   // useEffect(() => {
@@ -28,21 +37,29 @@ const SearchSpace = () => {
   // }, []);
 
   return (
-    <div className="flex relative mx-3">
-      <div className="flex items-center gap-1">
-        <FiSearch className="text-white text-2xl absolute ml-2" />
-        <input
-          type="text"
-          className="bg-transparent border-2 border-white flex-grow rounded-md h-10 text-white text-xl font-semibold px-10 w-3/4"
-        />
-        <IoMdAddCircle className="text-white text-4xl cursor-pointer" />
-      </div>
-      {/* <div>
+    <>
+      <div className="flex relative mx-3">
+        <div className="flex items-center gap-1">
+          <FiSearch className="text-white text-2xl absolute ml-2" />
+          <input
+            type="text"
+            className="bg-transparent border-2 border-white flex-grow rounded-md h-10 text-white text-xl font-semibold px-10 w-3/4"
+          />
+          <IoMdAddCircle
+            onClick={onOpen}
+            className="text-white text-4xl cursor-pointer"
+          />
+        </div>
+        {/* <div>
         {contacts.map((contact) => (
           <div key={contact.id}></div>
         ))}
       </div> */}
-    </div>
+      </div>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        hi
+      </Modal>
+    </>
   );
 };
 
