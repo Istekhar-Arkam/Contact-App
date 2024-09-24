@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdAddCircle } from "react-icons/io";
-import Modal from "./modal";
+import AddAndUpdate from "./addAndUpdate";
 
 // import { collection } from "firebase/firestore";
 
@@ -56,9 +56,7 @@ const SearchSpace = () => {
         ))}
       </div> */}
       </div>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        hi
-      </Modal>
+      <AddAndUpdate onClose={onClose} isOpen={isOpen}/>
     </>
   );
 };

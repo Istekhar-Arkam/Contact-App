@@ -10,6 +10,7 @@ const Modal = ({ onClose, isOpen, children }) => {
             <div className="flex justify-end">
               <IoClose className="text-xl" onClick={onClose} />
             </div>
+            {children}
           </div>
           <div
             onClick={onClose}
