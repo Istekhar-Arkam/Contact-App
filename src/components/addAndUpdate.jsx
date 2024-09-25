@@ -5,17 +5,14 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 const AddAndUpdate = ({ isOpen, onClose }) => {
-  const AddAndUpdateContact = (contact) => {
-    const addContact = async (contact) => {
-      try {
-        const contactRef = collection(db, "contacts");
-        await addDoc(contactRef, contact);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const addContact = async (contact) => {
+    try {
+      const contactRef = collection(db, "contacts");
+      await addDoc(contactRef, contact);
+    } catch (error) {
+      console.log(error);
+    }
   };
-
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>

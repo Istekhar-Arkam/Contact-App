@@ -4,9 +4,7 @@ import { IoMdAddCircle } from "react-icons/io";
 import AddAndUpdate from "./addAndUpdate";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { CgProfile } from "react-icons/cg";
-import { TbEdit } from "react-icons/tb";
-import { MdDelete } from "react-icons/md";
+import ContactCard from "./contactCard";
 
 const SearchSpace = () => {
   const [isOpen, setOpen] = useState(false);
@@ -53,21 +51,7 @@ const SearchSpace = () => {
         </div>
         <div>
           {contacts.map((contact) => (
-            <div key={contact.id}>
-              <div className="flex items-center justify-between h-16 text-yellow-600 my-4 bg-yellow-200 rounded-lg px-2 ">
-                <CgProfile className="text-3xl" />
-                <div className="flex flex-col mr-10">
-                  <p className="text-black font-semibold text-lg">
-                    {contact.name}
-                  </p>
-                  <p className="text-black font-medium">{contact.number}</p>
-                </div>
-                <div className="flex text-3xl">
-                  <TbEdit className="text-black" />
-                  <MdDelete />
-                </div>
-              </div>
-            </div>
+            <ContactCard key={contact.id} contact={contact} />
           ))}
         </div>
       </div>
