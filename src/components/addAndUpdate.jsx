@@ -26,7 +26,7 @@ const AddAndUpdate = ({ isOpen, onClose }) => {
           }}
           onSubmit={(values) => {
             console.log(values);
-            addContact(values)
+            addContact(values);
           }}
         >
           <Form className="flex flex-col gap-4">
