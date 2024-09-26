@@ -31,10 +31,9 @@ const SearchSpace = () => {
           setContacts(contactLists);
           return contactLists();
         });
-        
       } catch (error) {
         console.log(error);
-      };
+      }
     };
     getContacts();
   }, []);
@@ -65,7 +64,7 @@ const SearchSpace = () => {
         <div className="flex items-center gap-1">
           <FiSearch className="text-white text-2xl absolute ml-2" />
           <input
-          onChange={filterContacts}
+            onChange={filterContacts}
             type="text"
             className="bg-transparent border-2 border-white flex-grow rounded-md h-10 text-white text-xl font-semibold px-10 w-3/4"
           />

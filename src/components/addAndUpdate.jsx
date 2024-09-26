@@ -73,7 +73,7 @@ const AddAndUpdate = ({ isOpen, onClose, contact, isUpdate }) => {
                 name="number"
                 className="border-2 border-black h-10 px-2"
               />
-               <div className="text-red-500 text-sm font-semibold">
+              <div className="text-red-500 text-sm font-semibold">
                 <ErrorMessage name="number" />
               </div>
             </div>
