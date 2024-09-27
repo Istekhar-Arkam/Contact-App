@@ -17,7 +17,6 @@ const SearchSpace = () => {
     const getContacts = async () => {
       try {
         const contactsRef = collection(db, "contacts");
-        const contactsSnapshot = await getDocs(contactsRef);
 
         // code to refresh page
 
@@ -28,8 +27,9 @@ const SearchSpace = () => {
               ...doc.data(),
             };
           });
+
           setContacts(contactLists);
-          return contactLists();
+          return contactLists;
         });
       } catch (error) {
         console.log(error);
