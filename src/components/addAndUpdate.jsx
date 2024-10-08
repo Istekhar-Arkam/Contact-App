@@ -77,7 +77,7 @@ const AddAndUpdate = ({ isOpen, onClose, contact, isUpdate }) => {
                 <ErrorMessage name="number" />
               </div>
             </div>
-            <button className="bg-orange border-1 px-8 py-1.5 self-end rounded-lg text-lg font-semibold">
+            <button className="bg-orange border-1 px-8 py-1.5 self-end rounded-lg text-lg font-semibold" typeof="button">
               Save
             </button>
           </Form>
